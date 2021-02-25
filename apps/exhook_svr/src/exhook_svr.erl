@@ -69,8 +69,9 @@ on_provider_loaded(_Req, Md) ->
                      #{name => <<"session.terminated">>},
                      #{name => <<"message.publish">>},
                      #{name => <<"message.delivered">>},
-                     #{name => <<"message.acked">>},
-                     #{name => <<"message.dropped">>}]}, Md}.
+                     #{name => <<"message.acked">>}
+                     %#{name => <<"message.dropped">>}
+                    ]}, Md}.
 -spec on_provider_unloaded(emqx_exhook_pb:provider_unloaded_request(), grpc:metadata())
     -> {ok, emqx_exhook_pb:empty_success(), grpc:metadata()}
      | {error, grpc_cowboy_h:error_response()}.
